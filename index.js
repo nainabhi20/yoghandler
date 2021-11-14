@@ -26,7 +26,7 @@ const que2='CREATE TABLE IF NOT EXISTS SUBS_DETAIL(PHONE_NO VARCHAR(10),MONTH IN
 
 
 app.use(bodyParser.json());
-app.get('/',(req,res)=>{ console.log('Hi im in');  res.send('<h1>Home page request</h1>')});
+
 app.get('/get_user_data',(req,res)=>{
     console.log('get a request to get data donors data...');
     const que2="SELECT * FROM USER_DATA";
