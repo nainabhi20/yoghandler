@@ -26,28 +26,31 @@ Database used:- MYSQL
 
 #step2
        ->Clone the code from the github to this folder
-         Link for clone:-  https://github.com/nainabhi20/yoghandler.git  
+       Link for clone:-
+       
+           https://github.com/nainabhi20/yoghandler.git  
          
 #step3
       ->Open index.js file
-      
-      ->On line number 9 change the username of MYSQL with your username
-      
-      On line number  10 change the password of MYSQL with your password
+            -> On line number 9 change the username of MYSQL with your username
+            -> On line number  10 change the password of MYSQL with your password
 
         
 #step4
        ->Get inside into your created folder into command promt(cmd) and then run the command
+       ( This command runs the Node.js code and start listening to PORT NUMBER 5000)
        
-              command->   node index.js
+                 node index.js
               
-              ( This command runs the Node.js code and start listening to PORT NUMBER 5000
+          
               
 #step5
       -> Get into the ./client folder into command promt(cmd) and then run the command
-              command->   npm start
+      (This command runs your React.js(front-end) script)
+      
+                 npm start
               
-              (This command runs your React.js(front-end) script)
+              
        
 #step6
      -> Now Application will be running on your machine
