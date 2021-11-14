@@ -32,7 +32,7 @@ Database used:- MYSQL
          
 #step3
       ->Open index.js file
-            -> On line number 9 change the username of MYSQL with your username
+            -> On line number 9 change the username of MYSQL with your username \n
             -> On line number  10 change the password of MYSQL with your password
 
         
