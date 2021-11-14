@@ -32,7 +32,9 @@ Database used:- MYSQL
          
 #step3
       ->Open index.js file
-            -> On line number 9 change the username of MYSQL with your username \n
+      
+            -> On line number 9 change the username of MYSQL with your username 
+            
             -> On line number  10 change the password of MYSQL with your password
 
         
@@ -63,11 +65,15 @@ Database used:- MYSQL
 
 
 -----DATABASE SCHEMA----------------------------------------------------------------------------------------------------------------
+     
+    'CREATE DATABASE IF NOT EXISTS yogaappdata'
+    
+    'USE yogaappdata'
+     
+    'CREATE TABLE IF NOT EXISTS USER_DATA(PHONE_NO VARCHAR(10) PRIMARY KEY,NAME VARCHAR(30) NOT NULL,AGE INT NOT NULL,BATCH VARCHAR(10))'
 
-'CREATE TABLE IF NOT EXISTS USER_DATA(PHONE_NO VARCHAR(10) PRIMARY KEY,NAME VARCHAR(30) NOT NULL,AGE INT NOT NULL,BATCH VARCHAR(10))'
 
-
-'CREATE TABLE IF NOT EXISTS SUBS_DETAIL(PHONE_NO VARCHAR(10),MONTH INT,YEAR INT,FOREIGN KEY (PHONE_NO) REFERENCES USER_DATA(PHONE_NO))'
+    'CREATE TABLE IF NOT EXISTS SUBS_DETAIL(PHONE_NO VARCHAR(10),MONTH INT,YEAR INT,FOREIGN KEY (PHONE_NO) REFERENCES USER_DATA(PHONE_NO))'
 
  
  I create two tables first one for storing the user data and another one is to store the data of user monthly subscription.
