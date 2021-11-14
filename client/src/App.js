@@ -4,7 +4,45 @@ import Card from './Card.js';
 import Userdetail from './Userdetail';
 import Advantages from './Advantages';
 import Footer from './Footer.js';
+import axios from 'axios';
+import { getElementError } from '@testing-library/dom';
+import React , {useState} from 'react';
+
+function hide(){
+  const element = document.querySelector('#findme');
+  const style = getComputedStyle(element);
+let I1=setInterval(() => {
+     let val=parseFloat(style.opacity);
+      if(val==0){
+          clearInterval(I1);
+          document.getElementById("findme").style.display="none";
+          document.getElementById("msg_heading").innerHTML="";
+
+      }else{
+          val=val-0.01;
+          document.getElementById("findme").style.opacity=val.toString();
+      }
+  }, 5);
+}
+
+function show(){
+  document.getElementById("findme").style.display="block";
+  const element = document.querySelector('#findme');
+  const style = getComputedStyle(element);
+let I1=setInterval(() => {
+    
+     let val=parseFloat(style.opacity);
+      if(val==0.8){
+          clearInterval(I1);
+      }else{
+          val=val+0.01;
+          document.getElementById("findme").style.opacity=val.toString();
+      }
+  }, 5);
+}
+
 function App() {
+  const [click,setClick] = useState({mobile:''});
   return (
     <div className="App">
         <div><img src={yoga} style={{height:'7rem',width:'7rem'}}></img></div>
@@ -20,6 +58,7 @@ function App() {
                     clearInterval(iterval);
                 },2);
             }}><h5>Show package detail</h5></button>
+            <button className="find_me" onClick={()=>{show()}}>Find me</button>
             <Userdetail/>
         </div>
         <div>
@@ -39,6 +78,39 @@ function App() {
               <Advantages heading="Boosts mental well being" content="Along with the physical benefits, yoga can also help combat the effects of insomnia, stress, and anxiety through regular practice."/>
             </div>
         </div>
+      
+      <div id="findme">
+        <form style={{marginTop:'2rem'}}>
+         <input id="phonenumber" value={click.mobile}  onChange={(e)=>{setClick({...click,mobile:e.target.value})}} class="input" placeholder="Enter registred phone no"/>
+         <button  onClick={(e)=>{
+            e.preventDefault();
+            let s=click.mobile;
+            if(s.length!=10){
+            alert("Invalid phone number format");
+            return;
+            }
+            for(let i=0;i<s.length;i++){
+              if(s[i]<'0'||s[i]>'9'){
+                alert("Invalid phone number format");
+                 return;
+              }
+            }
+            
+            axios.post("/get_user_data",click)
+            .then(resp=>{
+              document.getElementById("msg_heading").innerHTML=resp.data;
+                        }).catch(err=>{
+                    
+                                    alert(err);
+            });
+         }} >GO</button>
+         </form>
+         <h1 id="msg_heading"></h1>
+         <h2 id="cross" style={{color:'white',position:'absolute',top:'0px',right:'15px',cursor:'pointer'}} onClick={()=>{
+           setClick({...click,mobile:''});
+           hide();}}>X</h2>
+      </div>
+
     </div>
   );
 }

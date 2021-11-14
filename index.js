@@ -27,12 +27,13 @@ const que2='CREATE TABLE IF NOT EXISTS SUBS_DETAIL(PHONE_NO VARCHAR(10),MONTH IN
 
 app.use(bodyParser.json());
 
-app.get('/get_user_data',(req,res)=>{
+app.post('/get_user_data',(req,res)=>{
     console.log('get a request to get data donors data...');
-    const que2="SELECT * FROM USER_DATA";
+    const que2="SELECT * FROM USER_DATA WHERE PHONE_NO='"+req.body.mobile+"'";
     con.query(que2,(err,result,feilds)=>{
+
         if(err)
-           res.send("some error on server side");
+           res.send("some error on server side"+err);
         else{
             if(result.length!=0){
                 let d=new Date();
@@ -43,20 +44,22 @@ app.get('/get_user_data',(req,res)=>{
                     if(err){
                         res.send("SERVER ERROR");
                     }else{
-                        if(result.length()!=0){
-                            res.send("YOU ARE ALREADY SUBSCRIBED FOR THIS MONTH");
+                        if(result.length!=0){
+                            let s="";
+                            con.query("SELECT * FROM USER_DATA WHERE PHONE_NO='"+req.body.mobile+"'",(err,result,feilds)=>{
+                                if(err)
+                                res.send("Server error");
+                                else
+                                s=result[0].NAME;
+                                res.send("Hi "+s+" YOU ARE ALREADY SUBSCRIBED FOR THIS MONTH");
+                            })
                         }else{
-                            res.send("You do not subscribe for this month")
+                            res.send("You do not subscribe for this month <br/> do subscribe now");
                         }
                     }
                 });
             }else{
-                con.query(que,(err,result,feilds)=>{
-                    if(err)
-                    res.send("INSERTION ERROR");
-                    else
-                    res.send("You are not subscribed for this month");
-                });
+                res.send("You do not subscribed for this months <br/> do subscribe now");
             }
         }
         

@@ -44,7 +44,7 @@ export default class Userdetail extends React.Component{
                             alert("Your age is not suitable for our yoga classes");
                             return;
                         }
-
+                        console.log(this.state);
                         axios.post("/signup",this.state)
                             .then(resp=>{alert(resp.data);
                                         }).catch(err=>{

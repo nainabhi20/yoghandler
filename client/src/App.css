@@ -145,3 +145,38 @@ h5{
   position:relative;
   top:-10rem;
 }
+
+#findme{
+  height:20rem;
+  width: 30rem;
+  background-color: black;
+  opacity: 0.9;
+  border-radius: 1rem;
+  position: fixed;
+  top:20rem;
+  left: 1rem;
+  opacity: 0;
+  display: none;
+
+}
+#msg_heading{
+  color:white;
+}
+.find_me{
+  color: white;
+  background-color: #9933ff;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top:1rem;
+  padding-bottom:1rem;
+  border-radius: 2rem;
+  position:relative;
+  top:1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top:37rem;
+  left: 2rem;
+  animation-name: anim1;
+  animation-duration:4s;
+  animation-iteration-count: 1;
+}
