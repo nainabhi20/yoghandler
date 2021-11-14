@@ -1,0 +1,179 @@
+.form{
+    position: relative;
+    left: 60rem;
+    top:-35rem;
+    width: 25rem;
+    height: 25rem;
+    background-color:white;
+    border-radius: 1rem;
+    animation-name: slightdark;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    opacity: 0.9;
+    box-shadow: 2px 2px 20px 2px #9933ff;
+}
+.input{
+    width: 65%;
+    margin: 0.7rem;
+    height: 1.5rem;
+    color:#9933ff;
+    border-color: lightgrey;
+    border-radius: 0.2rem;
+    cursor: pointer;
+
+}
+.input:hover{
+    box-shadow: 1px 1px 5px 3px #9933ff;
+}
+  ::placeholder{
+      color: #9933ff;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+.try{
+    color: white;
+    background-color: #9933ff;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    border-radius: 2rem;
+    position:relative;
+    top:1.5rem;
+    cursor: pointer;
+
+}
+@keyframes slightdark {
+    0%{
+        opacity: 0;
+    }
+    60%{
+        opacity: 0.5;
+        top:-30rem;
+    }
+    100%{
+        opacity: 1;
+        top:-35rem;
+    }
+}
+@keyframes slightdark2 {
+  0%{
+      opacity: 0;
+  }
+  60%{
+      opacity: 0.5;
+      top:-30rem;
+  }
+  80%{
+      opacity: 0.8;
+      top:-35rem;
+  }
+  100%{
+    opacity: 1;
+    top:-20rem;
+  }
+}
+::placeholder{
+    color: #9933ff;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+@media screen and (min-width: 1070px) {
+  .cards{height:20rem;}
+}
+@media screen and (max-width: 1300px) {
+    .form{
+        margin: 1rem;
+        left: 50rem;
+        top:-35rem;
+    }
+  }
+  @media screen and (max-width: 1211px) {
+    .form{
+        margin: 1rem;
+        left: 45rem;
+        top: -35rem;
+    }
+  }
+  @media screen and (max-width: 1130px) {
+    .form{
+        margin: 1rem;
+        left: 40rem;
+        top: -35rem;
+    }
+  }
+  @media screen and (max-width: 1037px) {
+    .form{
+        margin: 1rem;
+        left: 35rem;
+        top: -35rem;
+    }
+  }
+  @media screen and (max-width: 1025px) {
+    .form{
+        margin: 1rem;
+        left: 35rem;
+        top:-35rem;
+    }
+  }
+  @media screen and (max-width: 971px) {
+    .form{
+        margin: 1rem;
+        left: 30rem;
+        top:-35rem;
+    }
+  }
+  @media screen and (max-width: 850px) {
+
+    .form{
+        margin: 1rem;
+        left: 23rem;
+        top:-35rem;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    html{
+      font-size: 14px;
+    }
+    .form{
+        margin: 1rem;
+        left: 12rem;
+        top:-20rem;
+        animation-name:slightdark2;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    html {
+      font-size: 13px;
+    }
+    .form{
+        margin: 1rem;
+        left: 3rem;
+        top: -20rem;
+    }
+    .cards{
+      padding-left: 2rem;
+    }
+  }
+  @media screen and (max-width: 387px) {
+    html {
+      font-size: 9px;
+    }
+    .form{
+        margin: 1rem;
+        left: 3rem;
+        top: -20rem;
+    }
+    .cards{
+      padding-left: 4rem;
+    }
+  }
+  @media screen and (max-width: 290px) {
+    html {
+      font-size: 9px;
+    }
+    .cards{
+      height: 90rem;
+    }
+    .form{
+        margin: 1rem;
+        left: 3rem;
+        top: -20rem;
+    }
+  }
